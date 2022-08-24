@@ -1,2 +1,2 @@
 # fan
-Simple fan management service for Diet Pie
+A simple fan management service for DietPie
