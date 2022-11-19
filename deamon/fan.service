@@ -1,0 +1,8 @@
+[Unit]
+Description=Fan manager
+After=multi-user.target
+
+[Service]
+ExecStart=bash /root/dietpi_fan/deamon/run.sh
+Type=simple
+Restart=always

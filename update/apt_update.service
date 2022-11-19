@@ -1,0 +1,10 @@
+[Unit]
+Description=Apt update on boot
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/bash /root/.scripts/sys-update.sh
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
