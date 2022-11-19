@@ -6,3 +6,6 @@ After=multi-user.target
 ExecStart=bash /root/dietpi_fan/deamon/run.sh
 Type=simple
 Restart=always
+
+[Install]
+WantedBy=multi-user.target
