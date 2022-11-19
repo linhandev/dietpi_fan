@@ -15,7 +15,7 @@ class FanManager:
         self.min_speed = 0.4
         self.max_speed = 1
         self.prev_duty_cycle = -1
-        self.intv = 60  # update every intv seconds
+        self.intv = 30  # update every intv seconds
         self.step = 0.1  # change step each update
 
         # start spin when run
@@ -78,9 +78,9 @@ class FanManager:
                     continue
 
                 if temp < self.target_temp:
-                    curr_speed = max(curr_speed - self.step, 0)
+                    curr_speed = max(curr_speed * (1 - self.step), 0)
                 else:
-                    curr_speed = min(curr_speed + self.step, 1)
+                    curr_speed = min(curr_speed * (1 + self.step), 1)
 
                 duty_cycle = self.set_speed(curr_speed)
 
